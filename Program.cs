@@ -1,4 +1,4 @@
-﻿using static MailJet.EmailService.Email;
+﻿using MailJet.EmailService;
 
-await SendAsync();
+await Email.SendAsync();
 

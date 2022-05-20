@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Mailjet.Api" Version="2.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
   </ItemGroup>
 
 </Project>

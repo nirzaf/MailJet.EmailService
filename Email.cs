@@ -6,26 +6,30 @@ namespace MailJet.EmailService
 {
     public static class Email
     {
+        //private static IConfiguration configurations { get; set; }
+        
+        //private static readonly string ApiKey = configurations.GetSection("Mailjet").GetSection("ApiKey").Value;
+        //private static readonly string ApiSecret = configurations.GetSection("Mailjet").GetSection("ApiSecret").Value;
+
         public static async Task SendAsync()
         {
-
-            MailjetClient client = new(Environment.GetEnvironmentVariable("****************************1234"),
-                    Environment.GetEnvironmentVariable("****************************abcd"))
-                { };
+            MailjetClient client = new("c", "f");
 
             MailjetRequest request = new MailjetRequest
             {
-                Resource = Send.Resource,
-            }.Property(Send.Messages, new JArray
-            {
-                new JObject
+                Resource = TemplateDetailcontent.Resource,
+                ResourceId = ResourceId.Numeric(3945925)
+            }.Property(
+                Send.Messages, new JArray
                 {
+                    new JObject
                     {
-                        "From",
+                        {
+                        "From", 
                         new JObject
                         {
                             {"Email", "quadrate.lk@gmail.com"},
-                            {"Name", "Mohamed Farook"}
+                            {"Name", "Quadrate Tech Solutions"}
                         }
                     },
                     {
@@ -36,7 +40,7 @@ namespace MailJet.EmailService
                             {
                                 {
                                     "Email",
-                                    "quadrate.lk@gmail.com"
+                                    "mfmfazrin1986@gmail.com"
                                 },
                                 {
                                     "Name",
